@@ -11,15 +11,17 @@ public class FizzBuzz {
 //
 //        return number + "";
 //    }
-    String result = "";
+        boolean isFizz = number % 3 == 0;
+        boolean isBuzz = number % 5 == 0;
 
-        if (number % 3 == 0) {
-        result += "Fizz";
-    }
-        if (number % 5 == 0) {
-        result += "Buzz";
-    }
+        if(isFizz && isBuzz)
+            return "FizzBuzz";
 
-    // If result is still empty, return the number itself
-        return result.isEmpty() ? String.valueOf(number) : result;
+        if(isFizz)
+            return "Fizz";
+
+        if(isBuzz)
+            return "Buzz";
+
+        return number + "";
 }
