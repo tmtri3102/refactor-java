@@ -1,58 +1,33 @@
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.*;
 public class FizzBuzzTest {
-    @Test
-    void testFizz3() {
-        int number = 3;
-        String expected = "Fizz";
 
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
+    private void assertFizzBuzz(int number, String expected) {
+        assertEquals(expected, FizzBuzz.fizzBuzz(number));
     }
 
     @Test
-    void testFizz6() {
-        int number = 6;
-        String expected = "Fizz";
-
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
+    void testFizzNumbers() {
+        assertFizzBuzz(3, "Fizz");
+        assertFizzBuzz(6, "Fizz");
     }
 
     @Test
-    void testBuzz5() {
-        int number = 5;
-        String expected = "Buzz";
-
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
+    void testBuzzNumbers() {
+        assertFizzBuzz(5, "Buzz");
+        assertFizzBuzz(10, "Buzz");
     }
 
     @Test
-    void testBuzz10() {
-        int number = 10;
-        String expected = "Buzz";
-
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
+    void testFizzBuzzNumbers() {
+        assertFizzBuzz(15, "FizzBuzz");
+        assertFizzBuzz(30, "FizzBuzz");
     }
 
     @Test
-    void testFizzBuzz15() {
-        int number = 15;
-        String expected = "FizzBuzz";
-
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
-    }
-
-    @Test
-    void testFizzBuzz30() {
-        int number = 30;
-        String expected = "FizzBuzz";
-
-        String result = FizzBuzz.fizzBuzz(number);
-        assertEquals(expected, result);
+    void testNonFizzBuzzNumbers() {
+        assertFizzBuzz(1, "1");
+        assertFizzBuzz(7, "7");
     }
 }
